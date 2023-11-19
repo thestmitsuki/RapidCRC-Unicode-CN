@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Chinese (Simple) resources
+// Chinese (Simplified) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_NEUTRAL
@@ -49,52 +49,6 @@ BEGIN
     CONTROL         "",IDC_CHECK_CONTEXT15,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,165,10,10
     CONTROL         "",IDC_CHECK_CONTEXT16,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,179,10,10
 END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// DESIGNINFO
-//
-
-#ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
-BEGIN
-    IDD_DIALOG_CONTEXT_MENU, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 188
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 239
-    END
-END
-#endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// AFX_DIALOG_LAYOUT
-//
-
-IDD_DIALOG_CONTEXT_MENU AFX_DIALOG_LAYOUT
-BEGIN
-    0
-END
-
-#endif    // Chinese (Simple) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// Chinese (Simple) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
-LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
-#pragma code_page(936)
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Dialog
-//
 
 IDD_OPTIONS DIALOGEX 0, 0, 443, 267
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
@@ -206,6 +160,14 @@ END
 #ifdef APSTUDIO_INVOKED
 GUIDELINES DESIGNINFO
 BEGIN
+    IDD_DIALOG_CONTEXT_MENU, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 239
+    END
+
     IDD_OPTIONS, DIALOG
     BEGIN
         LEFTMARGIN, 7
@@ -230,6 +192,11 @@ END
 // AFX_DIALOG_LAYOUT
 //
 
+IDD_DIALOG_CONTEXT_MENU AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
 IDD_OPTIONS AFX_DIALOG_LAYOUT
 BEGIN
     0
@@ -240,7 +207,7 @@ BEGIN
     0
 END
 
-#endif    // Chinese (Simple) resources
+#endif    // Chinese (Simplified) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

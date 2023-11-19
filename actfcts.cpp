@@ -108,7 +108,7 @@ VOID ActionHashIntoStream(CONST HWND arrHwnd[ID_NUM_WINDOWS],BOOL noPrompt,list<
 	if(noPrompt || MessageBox(arrHwnd[ID_MAIN_WND],
 				(uiNumSelected?
 				TEXT("将HASH值写入所选文件的流中"):
-				TEXT("将HASH值写入缺少HASH的文件流中")),
+				TEXT("将HASH值写入缺少 HASH 的文件流中")),
 				TEXT("问题"),
 				MB_OKCANCEL | MB_ICONQUESTION | MB_APPLMODAL | MB_SETFOREGROUND) == IDOK){
 		bAFileWasProcessed = FALSE;
@@ -135,7 +135,7 @@ VOID ActionHashIntoStream(CONST HWND arrHwnd[ID_NUM_WINDOWS],BOOL noPrompt,list<
 			DisplayStatusOverview(arrHwnd[ID_EDIT_STATUS]);
 		}
 		else
-			MessageBox(arrHwnd[ID_MAIN_WND], TEXT("未找到缺少HASH的文件"), TEXT("信息"), MB_OK);
+			MessageBox(arrHwnd[ID_MAIN_WND], TEXT("未找到缺少 HASH 的文件"), TEXT("信息"), MB_OK);
 	}
 	return;
 }
@@ -241,8 +241,8 @@ VOID ActionHashIntoFilename(CONST HWND arrHwnd[ID_NUM_WINDOWS], BOOL noPrompt, l
 
 	if(noPrompt || MessageBox(arrHwnd[ID_MAIN_WND],
 				(uiNumSelected?
-				TEXT("将HASH值写入所选文件的文件名中"):
-				TEXT("将HASH值写入缺少HASH的文件的文件名中")),
+				TEXT("将 HASH 值写入所选文件的文件名中"):
+				TEXT("将 HASH 值写入缺少 HASH 的文件的文件名中")),
 				TEXT("问题"),
 				MB_OKCANCEL | MB_ICONQUESTION | MB_APPLMODAL | MB_SETFOREGROUND) == IDOK){
 		bAFileWasProcessed = FALSE;

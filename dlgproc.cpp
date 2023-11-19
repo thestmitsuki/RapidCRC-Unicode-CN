@@ -891,11 +891,11 @@ INT_PTR CALLBACK DlgProcFileCreation(HWND hDlg, UINT message, WPARAM wParam, LPA
 		SetWindowText(GetDlgItem(hDlg, IDC_STATIC_INTRO_TEXT), szString);
 
 		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个文件创建 .%s  %s"),
-			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (MD5SUM兼容)") : TEXT("") );
+			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (MD5SUM 兼容)") : TEXT("") );
 		SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_PER_FILE), szString);
 
 		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个目录创建 .%s  %s"),
-			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (MD5SUM兼容)") : TEXT("") );
+			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (MD5SUM 兼容)") : TEXT("") );
 		SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_PER_DIR), szString);
 
 		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为单个文件创建 .%s  %s"),
@@ -915,7 +915,7 @@ INT_PTR CALLBACK DlgProcFileCreation(HWND hDlg, UINT message, WPARAM wParam, LPA
         SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_PER_JOB_DIR_NAME), szString);
 
 		SetWindowText(GetDlgItem(hDlg, IDC_STATIC_EXPLANATION),
-			pfco->uiMode == MODE_MD5 ? TEXT("* : MD5SUM兼容.MD5 文件无法保存目录信息") : TEXT(""));
+			pfco->uiMode == MODE_MD5 ? TEXT("* : MD5SUM 兼容.MD5 文件无法保存目录信息") : TEXT(""));
 
 		switch(pfco->uiCreateFileMode){
 		case CREATE_ONE_PER_FILE:

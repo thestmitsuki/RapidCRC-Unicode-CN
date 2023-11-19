@@ -720,7 +720,7 @@ VOID SetInfoColumnText(FILEINFO *pFileinfo, lFILEINFO *fileList)
 	// Step 1: We make all strings needed
 	if(pFileinfo->dwError != NO_ERROR) {
 		if(pFileinfo->dwError == APPL_ERROR_ILLEGAL_CRC)
-			StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("CRC/MD5 Invalid"));
+			StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("CRC/MD5 无效"));
 		else if(pFileinfo->dwError == ERROR_FILE_NOT_FOUND || pFileinfo->dwError == ERROR_PATH_NOT_FOUND)
 			StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("未找到文件"));
 		else
@@ -734,7 +734,7 @@ VOID SetInfoColumnText(FILEINFO *pFileinfo, lFILEINFO *fileList)
 			    StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("文件损坏"));
                 break;
             case STATUS_NO_CRC:
-			    StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("未找到HASH"));
+			    StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("未找到 HASH"));
                 break;
             case STATUS_HASH_FILENAME:
                 StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("文件名 校验"));

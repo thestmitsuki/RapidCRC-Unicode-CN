@@ -1127,7 +1127,7 @@ VOID DisplayStatusOverview(CONST HWND hEditStatus)
 		StringCchCat(szLine, MAX_LINE_LENGTH, szLineTmp);
 	}
 	if(SyncQueue.dwCountNoCrcFound > 0){
-		StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux Î´ÕÒµ½¹þÏ£Öµ,"), SyncQueue.dwCountNoCrcFound);
+		StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux Î´ÕÒµ½ HASH,"), SyncQueue.dwCountNoCrcFound);
 		StringCchCat(szLine, MAX_LINE_LENGTH, szLineTmp);
 	}
 	if(SyncQueue.dwCountNotFound > 0){

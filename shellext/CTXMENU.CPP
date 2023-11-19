@@ -47,7 +47,7 @@ struct ctxMenuEntry {
 constexpr ctxMenuEntry menuEntries[] = {
 	{ IDM_RAPIDCRC, TEXT("打开"), TEXT("使用 RapidCRC 打开文件并计算校验和"), TEXT("RapidCRCOpen"), NULL, IDI_OPEN_FOLDER																					  },
 	{ IDM_REPARENT, TEXT("重定向打开"), TEXT("使用 RapidCRC 打开文件并计算校验和,为校验和文件提供重定向操作"), TEXT("RapidCRCOpenReparent"), TEXT(" -Reparent"), IDI_OPEN_FOLDER	  },
-	{ IDM_OPENHASHFILES, TEXT("打开所有HASH文件"), TEXT("在 RapidCRC 中打开所有HASH文件并计算校验和"), TEXT("RapidCRCOpenHashFiles"), TEXT(" -HashFilesOnly"), IDI_OPEN_FOLDER								  },
+	{ IDM_OPENHASHFILES, TEXT("打开所有 HASH 文件"), TEXT("在 RapidCRC 中打开所有 HASH 文件并计算校验和"), TEXT("RapidCRCOpenHashFiles"), TEXT(" -HashFilesOnly"), IDI_OPEN_FOLDER								  },
     { IDM_SEP, TEXT(""), TEXT(""), TEXT(""), TEXT(""), 0                                                                                                                                                                          },
 	{ IDM_SFV, TEXT("创建 SFV"), TEXT("使用 RapidCRC 打开文件并创建一个 SFV 文件"), TEXT("RapidCRCCreateSFV"), TEXT(" -CreateSFV"), IDI_HASH_FILE																	  },
 	{ IDM_MD5, TEXT("创建 MD5"), TEXT("使用 RapidCRC 打开文件并创建一个 MD5 文件"), TEXT("RapidCRCCreateMD5"), TEXT(" -CreateMD5"), IDI_HASH_FILE																	  },

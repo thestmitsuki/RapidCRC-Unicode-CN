@@ -45,22 +45,22 @@ struct ctxMenuEntry {
 };
 
 constexpr ctxMenuEntry menuEntries[] = {
-	{ IDM_RAPIDCRC, TEXT("´ò¿ª"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢¼ÆËãÐ£ÑéºÍ"), TEXT("RapidCRCOpen"), NULL, IDI_OPEN_FOLDER																					  },
-	{ IDM_REPARENT, TEXT("ÖØ¶¨Ïò´ò¿ª"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢¼ÆËãÐ£ÑéºÍ,ÎªÐ£ÑéºÍÎÄ¼þÌá¹©ÖØ¶¨Ïò²Ù×÷"), TEXT("RapidCRCOpenReparent"), TEXT(" -Reparent"), IDI_OPEN_FOLDER	  },
-	{ IDM_OPENHASHFILES, TEXT("´ò¿ªËùÓÐHASHÎÄ¼þ"), TEXT("ÔÚ RapidCRC ÖÐ´ò¿ªËùÓÐHASHÎÄ¼þ²¢¼ÆËãÐ£ÑéºÍ"), TEXT("RapidCRCOpenHashFiles"), TEXT(" -HashFilesOnly"), IDI_OPEN_FOLDER								  },
+	{ IDM_RAPIDCRC, TEXT("æ‰“å¼€"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶è®¡ç®—æ ¡éªŒå’Œ"), TEXT("RapidCRCOpen"), NULL, IDI_OPEN_FOLDER																					  },
+	{ IDM_REPARENT, TEXT("é‡å®šå‘æ‰“å¼€"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶è®¡ç®—æ ¡éªŒå’Œ,ä¸ºæ ¡éªŒå’Œæ–‡ä»¶æä¾›é‡å®šå‘æ“ä½œ"), TEXT("RapidCRCOpenReparent"), TEXT(" -Reparent"), IDI_OPEN_FOLDER	  },
+	{ IDM_OPENHASHFILES, TEXT("æ‰“å¼€æ‰€æœ‰HASHæ–‡ä»¶"), TEXT("åœ¨ RapidCRC ä¸­æ‰“å¼€æ‰€æœ‰HASHæ–‡ä»¶å¹¶è®¡ç®—æ ¡éªŒå’Œ"), TEXT("RapidCRCOpenHashFiles"), TEXT(" -HashFilesOnly"), IDI_OPEN_FOLDER								  },
     { IDM_SEP, TEXT(""), TEXT(""), TEXT(""), TEXT(""), 0                                                                                                                                                                          },
-	{ IDM_SFV, TEXT("´´½¨ SFV"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢´´½¨Ò»¸ö SFV ÎÄ¼þ"), TEXT("RapidCRCCreateSFV"), TEXT(" -CreateSFV"), IDI_HASH_FILE																	  },
-	{ IDM_MD5, TEXT("´´½¨ MD5"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢´´½¨Ò»¸ö MD5 ÎÄ¼þ"), TEXT("RapidCRCCreateMD5"), TEXT(" -CreateMD5"), IDI_HASH_FILE																	  },
-	{ IDM_SHA1, TEXT("´´½¨ SHA1"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢´´½¨Ò»¸ö SHA1 ÎÄ¼þ"), TEXT("RapidCRCCreateSHA1"), TEXT(" -CreateSHA1"), IDI_HASH_FILE															  },
-	{ IDM_SHA256, TEXT("´´½¨ SHA256"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢´´½¨Ò»¸ö SHA256 ÎÄ¼þ"), TEXT("RapidCRCCreateSHA256"), TEXT(" -CreateSHA256"), IDI_HASH_FILE													  },
-	{ IDM_SHA512, TEXT("´´½¨ SHA512"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢´´½¨Ò»¸ö SHA512 ÎÄ¼þ"), TEXT("RapidCRCCreateSHA512"), TEXT(" -CreateSHA512"), IDI_HASH_FILE													  },
-	{ IDM_SHA3_224, TEXT("´´½¨ SHA3-224"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢´´½¨Ò»¸ö SHA3-224 ÎÄ¼þ"), TEXT("RapidCRCPutName"), TEXT(" -CreateSHA3224"), IDI_HASH_FILE											  },
-	{ IDM_SHA3_256, TEXT("´´½¨ SHA3-256"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢´´½¨Ò»¸ö SHA3-256 ÎÄ¼þ"), TEXT("RapidCRCPutNTFS"), TEXT(" -CreateSHA3256"), IDI_HASH_FILE										  },
-	{ IDM_SHA3_512, TEXT("´´½¨ SHA3-512"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢´´½¨Ò»¸ö SHA3-512 ÎÄ¼þ"), TEXT("RapidCRCCreateSHA3_244"), TEXT(" -CreateSHA3512"), IDI_HASH_FILE											  },
-	{ IDM_BLAKE2SP, TEXT("´´½¨ BLAKE2SP"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢´´½¨Ò»¸ö BLAKE2SP ÎÄ¼þ"), TEXT("RapidCRCCreateSHA3_256"), TEXT(" -CreateBLAKE2SP"), IDI_HASH_FILE										  },
-	{ IDM_BLAKE3, TEXT("´´½¨ BLAKE3"), TEXT("Ê¹ÓÃ RapidCRC ´ò¿ªÎÄ¼þ²¢´´½¨Ò»¸ö BLAKE3 ÎÄ¼þ"), TEXT("RapidCRCCreateSHA3_512"), TEXT(" -CreateBLAKE3"), IDI_HASH_FILE												  },
-	{ IDM_NAME, TEXT("ÍùÎÄ¼þÃûÖÐÐ´Èë CRC"), TEXT("ÔÚÎÄ¼þÃûÖÐÐ´Èë CRC"), TEXT("RapidCRCCreateBLAKE2SP"), TEXT(" -PutNAME"), IDI_HASH_FILE												  },
-	{ IDM_NTFS, TEXT("Íù NTFS Á÷Ð´Èë CRC"), TEXT("ÔÚ NTFS Á÷Ð´Èë CRC"), TEXT("RapidCRCCreateBLAKE3"), TEXT(" -PutNTFS"), IDI_HASH_FILE												  },
+	{ IDM_SFV, TEXT("åˆ›å»º SFV"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶åˆ›å»ºä¸€ä¸ª SFV æ–‡ä»¶"), TEXT("RapidCRCCreateSFV"), TEXT(" -CreateSFV"), IDI_HASH_FILE																	  },
+	{ IDM_MD5, TEXT("åˆ›å»º MD5"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶åˆ›å»ºä¸€ä¸ª MD5 æ–‡ä»¶"), TEXT("RapidCRCCreateMD5"), TEXT(" -CreateMD5"), IDI_HASH_FILE																	  },
+	{ IDM_SHA1, TEXT("åˆ›å»º SHA1"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶åˆ›å»ºä¸€ä¸ª SHA1 æ–‡ä»¶"), TEXT("RapidCRCCreateSHA1"), TEXT(" -CreateSHA1"), IDI_HASH_FILE															  },
+	{ IDM_SHA256, TEXT("åˆ›å»º SHA256"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶åˆ›å»ºä¸€ä¸ª SHA256 æ–‡ä»¶"), TEXT("RapidCRCCreateSHA256"), TEXT(" -CreateSHA256"), IDI_HASH_FILE													  },
+	{ IDM_SHA512, TEXT("åˆ›å»º SHA512"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶åˆ›å»ºä¸€ä¸ª SHA512 æ–‡ä»¶"), TEXT("RapidCRCCreateSHA512"), TEXT(" -CreateSHA512"), IDI_HASH_FILE													  },
+	{ IDM_SHA3_224, TEXT("åˆ›å»º SHA3-224"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶åˆ›å»ºä¸€ä¸ª SHA3-224 æ–‡ä»¶"), TEXT("RapidCRCPutName"), TEXT(" -CreateSHA3224"), IDI_HASH_FILE											  },
+	{ IDM_SHA3_256, TEXT("åˆ›å»º SHA3-256"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶åˆ›å»ºä¸€ä¸ª SHA3-256 æ–‡ä»¶"), TEXT("RapidCRCPutNTFS"), TEXT(" -CreateSHA3256"), IDI_HASH_FILE										  },
+	{ IDM_SHA3_512, TEXT("åˆ›å»º SHA3-512"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶åˆ›å»ºä¸€ä¸ª SHA3-512 æ–‡ä»¶"), TEXT("RapidCRCCreateSHA3_244"), TEXT(" -CreateSHA3512"), IDI_HASH_FILE											  },
+	{ IDM_BLAKE2SP, TEXT("åˆ›å»º BLAKE2SP"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶åˆ›å»ºä¸€ä¸ª BLAKE2SP æ–‡ä»¶"), TEXT("RapidCRCCreateSHA3_256"), TEXT(" -CreateBLAKE2SP"), IDI_HASH_FILE										  },
+	{ IDM_BLAKE3, TEXT("åˆ›å»º BLAKE3"), TEXT("ä½¿ç”¨ RapidCRC æ‰“å¼€æ–‡ä»¶å¹¶åˆ›å»ºä¸€ä¸ª BLAKE3 æ–‡ä»¶"), TEXT("RapidCRCCreateSHA3_512"), TEXT(" -CreateBLAKE3"), IDI_HASH_FILE												  },
+	{ IDM_NAME, TEXT("å¾€æ–‡ä»¶åä¸­å†™å…¥ CRC"), TEXT("åœ¨æ–‡ä»¶åä¸­å†™å…¥ CRC"), TEXT("RapidCRCCreateBLAKE2SP"), TEXT(" -PutNAME"), IDI_HASH_FILE												  },
+	{ IDM_NTFS, TEXT("å¾€ NTFS æµå†™å…¥ CRC"), TEXT("åœ¨ NTFS æµå†™å…¥ CRC"), TEXT("RapidCRCCreateBLAKE3"), TEXT(" -PutNTFS"), IDI_HASH_FILE												  },
 };
 
 //

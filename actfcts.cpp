@@ -107,8 +107,8 @@ VOID ActionHashIntoStream(CONST HWND arrHwnd[ID_NUM_WINDOWS],BOOL noPrompt,list<
 
 	if(noPrompt || MessageBox(arrHwnd[ID_MAIN_WND],
 				(uiNumSelected?
-				TEXT("将HASH值写入所选文件的流中"):
-				TEXT("将HASH值写入缺少 HASH 的文件流中")),
+				TEXT("将 HASH 值写入所选文件的流中"):
+				TEXT("将 HASH 值写入缺少 HASH 的文件流中")),
 				TEXT("问题"),
 				MB_OKCANCEL | MB_ICONQUESTION | MB_APPLMODAL | MB_SETFOREGROUND) == IDOK){
 		bAFileWasProcessed = FALSE;

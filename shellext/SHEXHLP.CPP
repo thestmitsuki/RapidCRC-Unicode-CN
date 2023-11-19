@@ -44,7 +44,7 @@ DWORD ShowErrorMsg ( HWND hWnd, DWORD dwError, const TCHAR * szExtraMsg)
 
 	// display the message in a message box
 	StringCchPrintf(szMessage, 500, TEXT("%s:\r\n%s"), szExtraMsg, lpMsgBuf);
-	MessageBox( hWnd, szMessage, TEXT("错误信息"), MB_ICONEXCLAMATION | MB_OK );
+	MessageBox( hWnd, szMessage, TEXT("Error Message"), MB_ICONEXCLAMATION | MB_OK );
 
 	// release the buffer FormatMessage allocated
 	LocalFree( lpMsgBuf );

@@ -890,15 +890,15 @@ INT_PTR CALLBACK DlgProcFileCreation(HWND hDlg, UINT message, WPARAM wParam, LPA
 			 pfco->uiNumSelected == 0 ? TEXT("全部") : TEXT("被选中的"), hashExt);
 		SetWindowText(GetDlgItem(hDlg, IDC_STATIC_INTRO_TEXT), szString);
 
-		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个 .%s 文件创建 %s"),
+		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个文件创建 .%s  %s"),
 			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (MD5SUM兼容)") : TEXT("") );
 		SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_PER_FILE), szString);
 
-		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个 .%s 目录创建 %s"),
+		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个目录创建 .%s  %s"),
 			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (MD5SUM兼容)") : TEXT("") );
 		SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_PER_DIR), szString);
 
-		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为单个 .%s 文件创建 %s"),
+		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为单个文件创建 .%s  %s"),
 			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (可能与 MD5SUM 不兼容 *)") : TEXT("") );
 		SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_FILE), szString);
 
@@ -906,7 +906,7 @@ INT_PTR CALLBACK DlgProcFileCreation(HWND hDlg, UINT message, WPARAM wParam, LPA
 			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (*)") : TEXT("") );
         SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_FILE_DIR_NAME), szString);
 
-        StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个 .%s 任务创建%s"),
+        StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个任务创建 .%s %s"),
 			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (可能与 MD5SUM 不兼容)") : TEXT("") );
 		SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_PER_JOB), szString);
 

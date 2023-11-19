@@ -219,7 +219,7 @@ INT WINAPI WinMain (HINSTANCE hInst, HINSTANCE /*hPrevInstance*/, LPSTR /*szCmdL
 
 	if (!(mainHwnd = InitInstance(iCmdShow))) 
 	{
-		MessageBox(NULL, TEXT("Program uses Unicode and requires Windows NT or higher"), TEXT("Error"), MB_ICONERROR);
+		MessageBox(NULL, TEXT("程序使用 Unicod,需要 Windows NT 或更高版本"), TEXT("错误"), MB_ICONERROR);
 		return 0;
 	}
 

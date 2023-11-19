@@ -13,11 +13,83 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Neutral resources
+// Chinese (Simple) resources
 
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
-LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
-#pragma code_page(1252)
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_NEUTRAL
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CONTEXT_MENU DIALOGEX 0, 0, 195, 246
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Shell 扩展"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确认",IDOK,80,225,50,14
+    PUSHBUTTON      "取消",IDCANCEL,138,225,50,14
+    CONTROL         IDB_BITMAP_CONTEXT,IDC_STATIC_CTX,"Static",SS_BITMAP | SS_NOTIFY | SS_REALSIZEIMAGE,27,7,161,214
+    CONTROL         "",IDC_CHECK_CONTEXT1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,10,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,24,10,9
+    CONTROL         "",IDC_CHECK_CONTEXT3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,37,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,47,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,56,10,11
+    CONTROL         "",IDC_CHECK_CONTEXT6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,70,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,84,10,8
+    CONTROL         "",IDC_CHECK_CONTEXT8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,97,10,9
+    CONTROL         "",IDC_CHECK_CONTEXT9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,111,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,192,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT11,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,205,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT12,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,124,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT13,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,138,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT14,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,152,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT15,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,165,10,10
+    CONTROL         "",IDC_CHECK_CONTEXT16,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,179,10,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG_CONTEXT_MENU, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 239
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG_CONTEXT_MENU AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // Chinese (Simple) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simple) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -26,11 +98,11 @@ LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
 
 IDD_OPTIONS DIALOGEX 0, 0, 443, 267
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Options"
+CAPTION "设置"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,327,246,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,386,246,50,14
+    DEFPUSHBUTTON   "确认",IDOK,327,246,50,14
+    PUSHBUTTON      "取消",IDCANCEL,386,246,50,14
     CONTROL         "CRC32",IDC_CHECK_CRC_DEFAULT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,24,38,10
     CONTROL         "CRC32C",IDC_CHECK_CRCC_DEFAULT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,35,38,10
     CONTROL         "MD5",IDC_CHECK_MD5_DEFAULT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,46,26,10
@@ -53,62 +125,54 @@ BEGIN
     CONTROL         "SHA3-224",IDC_CHECK_DISPLAY_SHA3_224_IN_LIST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,165,57,48,10
     CONTROL         "SHA3-256",IDC_CHECK_DISPLAY_SHA3_256_IN_LIST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,166,68,47,10
     CONTROL         "SHA3-512",IDC_CHECK_DISPLAY_SHA3_512_IN_LIST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,166,79,46,10
-    CONTROL         "Sort filenames on load",IDC_CHECK_SORT_LIST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,105,87,10
-    CONTROL         "Auto-Scroll ListView",IDC_CHECK_AUTO_SCROLL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,116,87,10
-    CONTROL         "Enable Job Queueing",IDC_ENABLE_QUEUE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,127,87,10
-    CONTROL         "Hashtype from filename",IDC_CHECK_HASHTYPE_FROM_FILENAME,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,115,105,100,10
-    CONTROL         "Hide Verified Items",IDC_CHECK_HIDE_VERIFIED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,115,116,100,10
-    CONTROL         "Default to codepage when opening:",IDC_USE_DEFAULT_CP,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,138,125,10
+    CONTROL         "加载时对文件名进行排序",IDC_CHECK_SORT_LIST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,105,104,10
+    CONTROL         "自动排列",IDC_CHECK_AUTO_SCROLL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,116,87,10
+    CONTROL         "启用任务队列",IDC_ENABLE_QUEUE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,127,87,10
+    CONTROL         "从文件名获取 HASH 值",IDC_CHECK_HASHTYPE_FROM_FILENAME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,115,105,100,10
+    CONTROL         "隐藏已验证项目",IDC_CHECK_HIDE_VERIFIED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,115,116,100,10
+    CONTROL         "打开时默认编码页:",IDC_USE_DEFAULT_CP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,138,125,10
     COMBOBOX        IDC_DEFAULT_CP,140,137,74,54,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Create WinSFV-compatible SFV files",IDC_CHECK_WINSFV_COMP,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,189,129,8
-    CONTROL         "Do not override existing files in ""create ... for all"" modes",IDC_CHECK_DO_NOT_OVERRIDE,
+    CONTROL         "创建与 WinSFV 兼容的 SFV 文件",IDC_CHECK_WINSFV_COMP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,189,129,8
+    CONTROL         "在 ""为所有创建...... ""模式下不覆盖现有文件",IDC_CHECK_DO_NOT_OVERRIDE,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,200,198,8
-    CONTROL         "Include file information comments",IDC_CHECK_INCLUDE_COMMENTS,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,211,117,8
-    CONTROL         "Create Unix style hash files",IDC_CHECK_CREATE_UNIX_STYLE,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,222,117,8
-    CONTROL         "Create Unicode Files",IDC_CHECK_CREATE_UNICODE_FILES,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,233,106,8
+    CONTROL         "包括文件信息注释",IDC_CHECK_INCLUDE_COMMENTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,211,117,8
+    CONTROL         "创建 Unix 风格的 HASH 文件",IDC_CHECK_CREATE_UNIX_STYLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,222,117,8
+    CONTROL         "创建 Unicode 文件",IDC_CHECK_CREATE_UNICODE_FILES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,233,106,8
     COMBOBOX        IDC_UNICODE_TYPE,140,231,74,54,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
     EDITTEXT        IDC_EDIT_EXCLUDE_LIST,227,23,203,14,ES_AUTOHSCROLL
     EDITTEXT        IDC_CRC_DELIM_LIST,226,65,203,14,ES_AUTOHSCROLL
-    CONTROL         "Allow hash without delimiters (more false positives)",IDC_ALLOW_CRC_ANYWHERE,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,227,81,179,10
+    CONTROL         "允许不带分隔符的 HASH（误报率更高）",IDC_ALLOW_CRC_ANYWHERE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,227,81,156,10
     EDITTEXT        IDC_EDIT_FILENAME_PATTERN,227,120,203,14,ES_AUTOHSCROLL
-    CONTROL         "Default",IDC_RADIO_HEX_DEFAULT,"Button",BS_AUTORADIOBUTTON,229,189,53,11
-    CONTROL         "Uppercase",IDC_RADIO_HEX_UPPERCASE,"Button",BS_AUTORADIOBUTTON,288,189,53,11
-    CONTROL         "Lowercase",IDC_RADIO_HEX_LOWERCASE,"Button",BS_AUTORADIOBUTTON,354,189,53,11
+    CONTROL         "默认",IDC_RADIO_HEX_DEFAULT,"Button",BS_AUTORADIOBUTTON,229,189,53,11
+    CONTROL         "大写",IDC_RADIO_HEX_UPPERCASE,"Button",BS_AUTORADIOBUTTON,288,189,53,11
+    CONTROL         "小写",IDC_RADIO_HEX_LOWERCASE,"Button",BS_AUTORADIOBUTTON,354,189,53,11
     EDITTEXT        IDC_EDIT_READ_BUFFER_SIZE,295,218,103,14,ES_AUTOHSCROLL
-    PUSHBUTTON      "Defaults",IDC_BTN_DEFAULT,224,246,50,14
-    PUSHBUTTON      "Menu",IDC_BTN_CONTEXT_MENU,277,246,44,14
-    GROUPBOX        "Algorithms",IDC_STATIC,3,2,107,89
-    LTEXT           "Calculate when not checking:",IDC_STATIC,9,12,94,8
+    PUSHBUTTON      "恢复默认",IDC_BTN_DEFAULT,224,246,50,14
+    PUSHBUTTON      "扩展菜单",IDC_BTN_CONTEXT_MENU,277,246,44,14
+    GROUPBOX        "算法",IDC_STATIC,3,2,107,89
+    LTEXT           "打开时自动计算:",IDC_STATIC,9,12,60,8
     GROUPBOX        "",IDC_STATIC,110,2,106,89
-    GROUPBOX        "General",IDC_STATIC,3,94,216,80
-    GROUPBOX        "File Creation",IDC_STATIC,3,179,216,69
-    GROUPBOX        "Exclude the following extensions",IDC_STATIC,222,2,216,39
-    LTEXT           "Separate extension with "";""",IDC_STATIC,227,12,89,8
-    GROUPBOX        "Allow the following characters as hash in filename delimiters",IDC_STATIC,222,44,216,51
-    LTEXT           "Do not separate the characters",IDC_STATIC,226,54,102,8
-    GROUPBOX        "How to put the hash into the filename",IDC_STATIC,222,97,216,67
-    LTEXT           "Available variables: %FILENAME, %FILEEXT, %CRC",IDC_STATIC,227,108,169,8
-    LTEXT           "Example:",IDC_STATIC,229,139,30,8
+    GROUPBOX        "常规",IDC_STATIC,3,94,216,80
+    GROUPBOX        "文件创建",IDC_STATIC,3,179,216,69
+    GROUPBOX        "排除以下扩展名",IDC_STATIC,222,2,216,39
+    LTEXT           "独立的扩建部分 "";""",IDC_STATIC,227,12,67,8
+    GROUPBOX        "允许在文件名分隔符中使用以下字符作为 HASH 字符",IDC_STATIC,222,44,216,51
+    LTEXT           "不使用分隔字符",IDC_STATIC,226,54,57,8
+    GROUPBOX        "在文件名中添加 HASH",IDC_STATIC,222,97,216,67
+    LTEXT           "可用变量: %FILENAME, %FILEEXT, %CRC",IDC_STATIC,227,108,142,8
+    LTEXT           "示例:",IDC_STATIC,229,139,20,8
     LTEXT           "C:\\MyFile.txt =>",IDC_STATIC,228,149,58,8
     LTEXT           "",IDC_STATIC_FILENAME_EXAMPLE,286,149,147,8
-    GROUPBOX        "Hex format",IDC_STATIC,222,179,216,25
-    GROUPBOX        "Advanced",IDC_STATIC,222,208,216,29
-    LTEXT           "Read buffer size:",IDC_STATIC,228,220,56,8
+    GROUPBOX        "十六进制格式",IDC_STATIC,222,179,216,25
+    GROUPBOX        "高级",IDC_STATIC,222,208,216,29
+    LTEXT           "读取缓冲区大小:",IDC_STATIC,228,220,60,8
     LTEXT           "kB",IDC_STATIC,403,220,19,8
-    LTEXT           "Display in list view:",IDC_STATIC,115,12,61,8
-    CONTROL         "New window from explorer",IDC_ALWAYS_USE_NEW_WINDOW,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,115,127,100,10
+    LTEXT           "在列表视图中显示:",IDC_STATIC,115,12,68,8
+    CONTROL         "创建新任务列表",IDC_ALWAYS_USE_NEW_WINDOW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,115,127,100,10
     CONTROL         "BLAKE3",IDC_CHECK_BLAKE3_DEFAULT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,79,43,10
     CONTROL         "BLAKE3",IDC_CHECK_DISPLAY_BLAKE3_IN_LIST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,117,79,46,10
-    CONTROL         "Unbuffered Reads",IDC_ENABLE_UNBUFFERED_READS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,149,87,10
-    CONTROL         "Close after filename/stream action from Shell Extension",IDC_CLOSE_AFTER_SHELLEXT_ACTION,
+    CONTROL         "无缓冲读取",IDC_ENABLE_UNBUFFERED_READS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,149,87,10
+    CONTROL         "从 Shell 扩展程序执行文件名/流操作后关闭",IDC_CLOSE_AFTER_SHELLEXT_ACTION,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,9,160,204,10
 END
 
@@ -116,8 +180,8 @@ IDD_DLG_FILE_CREATION DIALOGEX 0, 0, 251, 170
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,138,149,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,196,149,50,14
+    DEFPUSHBUTTON   "确认",IDOK,138,149,50,14
+    PUSHBUTTON      "取消",IDCANCEL,196,149,50,14
     LTEXT           "",IDC_STATIC_INTRO_TEXT,7,6,239,8
     GROUPBOX        "",IDC_GRPBOX_CREATE_FILE,3,15,243,89
     CONTROL         "",IDC_RADIO_ONE_PER_FILE,"Button",BS_AUTORADIOBUTTON,7,26,236,10
@@ -127,10 +191,10 @@ BEGIN
     CONTROL         "",IDC_RADIO_ONE_PER_JOB,"Button",BS_AUTORADIOBUTTON,7,75,236,10
     CONTROL         "",IDC_RADIO_ONE_PER_JOB_DIR_NAME,"Button",BS_AUTORADIOBUTTON,7,88,236,10
     LTEXT           "",IDC_STATIC_EXPLANATION,4,118,242,8
-    LTEXT           "Use this filename:",IDC_STATIC,5,132,58,8
+    LTEXT           "使用此文件名:",IDC_STATIC,5,132,52,8
     EDITTEXT        IDC_EDIT_FILENAME_CHECKSUM,65,130,180,14,ES_AUTOHSCROLL
-    PUSHBUTTON      "Default",IDC_BTN_DEFAULT,4,149,50,14,BS_CENTER
-    CONTROL         "Save absolute paths",IDC_CHECK_ABSOLUTE_PATHS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,104,194,13
+    PUSHBUTTON      "默认",IDC_BTN_DEFAULT,4,149,50,14,BS_CENTER
+    CONTROL         "保存绝对路径",IDC_CHECK_ABSOLUTE_PATHS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,104,194,13
 END
 
 
@@ -160,6 +224,32 @@ BEGIN
 END
 #endif    // APSTUDIO_INVOKED
 
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_OPTIONS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DLG_FILE_CREATION AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // Chinese (Simple) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -236,17 +326,6 @@ BEGIN
     END
 END
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// AFX_DIALOG_LAYOUT
-//
-
-IDD_OPTIONS AFX_DIALOG_LAYOUT
-BEGIN
-    0
-END
-
 #endif    // Neutral resources
 /////////////////////////////////////////////////////////////////////////////
 
@@ -257,68 +336,6 @@ END
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Dialog
-//
-
-IDD_DIALOG_CONTEXT_MENU DIALOGEX 0, 0, 195, 246
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Shell Extension"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
-BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,80,225,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,138,225,50,14
-    CONTROL         IDB_BITMAP_CONTEXT,IDC_STATIC_CTX,"Static",SS_BITMAP | SS_NOTIFY | SS_REALSIZEIMAGE,27,7,161,214
-    CONTROL         "",IDC_CHECK_CONTEXT1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,10,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,24,10,9
-    CONTROL         "",IDC_CHECK_CONTEXT3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,37,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,47,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,56,10,11
-    CONTROL         "",IDC_CHECK_CONTEXT6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,70,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,84,10,8
-    CONTROL         "",IDC_CHECK_CONTEXT8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,97,10,9
-    CONTROL         "",IDC_CHECK_CONTEXT9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,111,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,192,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT11,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,205,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT12,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,124,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT13,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,138,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT14,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,152,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT15,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,165,10,10
-    CONTROL         "",IDC_CHECK_CONTEXT16,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,179,10,10
-END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// DESIGNINFO
-//
-
-#ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
-BEGIN
-    IDD_DIALOG_CONTEXT_MENU, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 188
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 239
-    END
-END
-#endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// AFX_DIALOG_LAYOUT
-//
-
-IDD_DIALOG_CONTEXT_MENU AFX_DIALOG_LAYOUT
-BEGIN
-    0
-END
-
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////

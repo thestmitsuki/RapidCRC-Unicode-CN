@@ -107,9 +107,9 @@ VOID ActionHashIntoStream(CONST HWND arrHwnd[ID_NUM_WINDOWS],BOOL noPrompt,list<
 
 	if(noPrompt || MessageBox(arrHwnd[ID_MAIN_WND],
 				(uiNumSelected?
-				TEXT("\'OK\' to put the hash value into the stream of the selected files"):
-				TEXT("\'OK\' to put the hash value into the stream of the files that are missing a hash (the \'blue\' ones)")),
-				TEXT("Question"),
+				TEXT("将HASH值写入所选文件的流中"):
+				TEXT("将HASH值写入缺少HASH的文件流中")),
+				TEXT("问题"),
 				MB_OKCANCEL | MB_ICONQUESTION | MB_APPLMODAL | MB_SETFOREGROUND) == IDOK){
 		bAFileWasProcessed = FALSE;
 		for(list<FILEINFO*>::iterator it=finalList->begin();it!=finalList->end();it++) {
@@ -124,9 +124,9 @@ VOID ActionHashIntoStream(CONST HWND arrHwnd[ID_NUM_WINDOWS],BOOL noPrompt,list<
 					else{
 						pFileinfo->dwError = GetLastError();
 						StringCchPrintf(szFilenameTemp, MAX_PATH_EX,
-							TEXT("Error %u occured while saving stream in File :\r\n %s"),
+							TEXT("错误 %u 在文件保存流时发生 :\r\n %s"),
 							pFileinfo->dwError, pFileinfo->szFilenameShort);
-						MessageBox(arrHwnd[ID_MAIN_WND], szFilenameTemp, TEXT("Error"), MB_OK);
+						MessageBox(arrHwnd[ID_MAIN_WND], szFilenameTemp, TEXT("错误"), MB_OK);
 					}
 			}
 		}
@@ -135,7 +135,7 @@ VOID ActionHashIntoStream(CONST HWND arrHwnd[ID_NUM_WINDOWS],BOOL noPrompt,list<
 			DisplayStatusOverview(arrHwnd[ID_EDIT_STATUS]);
 		}
 		else
-			MessageBox(arrHwnd[ID_MAIN_WND], TEXT("No files missing a hash found"), TEXT("Info"), MB_OK);
+			MessageBox(arrHwnd[ID_MAIN_WND], TEXT("未找到缺少HASH的文件"), TEXT("信息"), MB_OK);
 	}
 	return;
 }
@@ -241,9 +241,9 @@ VOID ActionHashIntoFilename(CONST HWND arrHwnd[ID_NUM_WINDOWS], BOOL noPrompt, l
 
 	if(noPrompt || MessageBox(arrHwnd[ID_MAIN_WND],
 				(uiNumSelected?
-				TEXT("\'OK\' to put the hash value into the filename of the selected files"):
-				TEXT("\'OK\' to put the hash value into the filename of the files that are missing a hash")),
-				TEXT("Question"),
+				TEXT("将HASH值写入所选文件的文件名中"):
+				TEXT("将HASH值写入缺少HASH的文件的文件名中")),
+				TEXT("问题"),
 				MB_OKCANCEL | MB_ICONQUESTION | MB_APPLMODAL | MB_SETFOREGROUND) == IDOK){
 		bAFileWasProcessed = FALSE;
 		for(list<FILEINFO*>::iterator it=finalList->begin();it!=finalList->end();it++) {
@@ -262,9 +262,9 @@ VOID ActionHashIntoFilename(CONST HWND arrHwnd[ID_NUM_WINDOWS], BOOL noPrompt, l
 					else{
 						pFileinfo->dwError = GetLastError();
 						StringCchPrintf(szFilenameTemp, MAX_PATH_EX,
-							TEXT("Error %u occured while renaming file :\r\n %s"),
+							TEXT("错误 %u 重命名文件时发生 :\r\n %s"),
 							pFileinfo->dwError, pFileinfo->szFilenameShort);
-						MessageBox(arrHwnd[ID_MAIN_WND], szFilenameTemp, TEXT("Error"), MB_OK);
+						MessageBox(arrHwnd[ID_MAIN_WND], szFilenameTemp, TEXT("错误"), MB_OK);
 					}
 			}
 		}
@@ -274,7 +274,7 @@ VOID ActionHashIntoFilename(CONST HWND arrHwnd[ID_NUM_WINDOWS], BOOL noPrompt, l
             InvalidateRect(arrHwnd[ID_LISTVIEW], NULL, FALSE);
 		}
 		else
-			MessageBox(arrHwnd[ID_MAIN_WND], TEXT("No files missing a found"), TEXT("Info"), MB_OK);
+			MessageBox(arrHwnd[ID_MAIN_WND], TEXT("没有找到缺失的文件"), TEXT("信息"), MB_OK);
 	}
 	return;
 }
@@ -361,7 +361,7 @@ UINT_PTR CALLBACK OFNHookProc(HWND hdlg, UINT uiMsg, WPARAM wParam, LPARAM lPara
 	if(uiMsg==WM_NOTIFY) {
 		notify = (LPOFNOTIFY)lParam;
 		if(notify->hdr.code==CDN_INITDONE) {
-			CommDlg_OpenSave_SetControlText(GetParent(hdlg),chx1,TEXT("Reparent SFV/MD5"));
+			CommDlg_OpenSave_SetControlText(GetParent(hdlg),chx1,TEXT("重定向 SFV/MD5"));
 		}
 	}
 	return 0;
@@ -376,7 +376,7 @@ BOOL OpenFilesXPPrev(HWND hwnd, lFILEINFO *pFInfoList)
 
 	szBuffer = (TCHAR *) malloc(MAX_BUFFER_SIZE_OFN * sizeof(TCHAR)); 
 	if(szBuffer == NULL){
-		MessageBox(hwnd, TEXT("Error allocating buffer"), TEXT("Buffer error"), MB_OK);
+		MessageBox(hwnd, TEXT("分配缓冲区时出错"), TEXT("缓冲区 错误"), MB_OK);
 		return FALSE;
 	}
 	StringCchCopy(szBuffer, MAX_BUFFER_SIZE_OFN, TEXT(""));
@@ -392,8 +392,8 @@ BOOL OpenFilesXPPrev(HWND hwnd, lFILEINFO *pFInfoList)
 
 	if(!GetOpenFileName( & ofn )){
 		if(CommDlgExtendedError() == FNERR_BUFFERTOOSMALL){
-			MessageBox(hwnd, TEXT("You selected too many files. The buffers was too small. You can select as many files as you want if you use the rightclick shell extension of RapidCRC!"),
-						TEXT("Buffer too small error"), MB_OK);
+			MessageBox(hwnd, TEXT("您选择的文件太多,缓冲区太小,如果您使用 RapidCRC 的右键单击 shell 扩展名,则可以根据需要选择任意数量的文件!"),
+						TEXT("缓冲区太小 错误"), MB_OK);
 		}
 		free(szBuffer);
 		return FALSE;
@@ -500,9 +500,9 @@ DWORD CreateChecksumFiles(CONST HWND arrHwnd[ID_NUM_WINDOWS], CONST UINT uiMode)
 
 	if((checkReturn = CreateChecksumFiles(arrHwnd,uiMode,&finalList)) != NOERROR) {
 		StringCchPrintf(szErrorMessage, MAX_PATH_EX,
-							TEXT("Error %u occured during checksum file creation"),
+							TEXT("错误 %u 在校验和文件创建期间发生"),
 							checkReturn);
-		MessageBox(arrHwnd[ID_MAIN_WND], szErrorMessage, TEXT("Error"), MB_OK);
+		MessageBox(arrHwnd[ID_MAIN_WND], szErrorMessage, TEXT("错误"), MB_OK);
 	}
 
 	return checkReturn;
@@ -761,7 +761,7 @@ static BOOL GenerateFilename_OneFile(CONST HWND owner, CONST TCHAR *szDefault, U
 	    TCHAR filterString[MAX_PATH_EX];
 
 	    StringCchPrintf(filterString,MAX_PATH_EX,TEXT(".%s files%c*.%s%cAll files%c*.*%c"),hashExt,TEXT('\0'),hashExt,TEXT('\0'),TEXT('\0'),TEXT('\0'));
-        StringCchPrintf(msgString,MAX_PATH_EX,TEXT("Please choose a filename for the .%s file (job-root: %s)"),hashExt, szRoot);
+        StringCchPrintf(msgString,MAX_PATH_EX,TEXT("请为所选文件 .%s 创建文件名 (job-root: %s)"),hashExt, szRoot);
 
 	    ZeroMemory(& ofn, sizeof (OPENFILENAME));
 	    ofn.lStructSize       = sizeof (OPENFILENAME);
@@ -988,10 +988,10 @@ bool CheckIfRehashNecessary(CONST HWND arrHwnd[ID_NUM_WINDOWS], CONST UINT uiMod
 	if(needRehash && !doRehash){
         TCHAR *hashName = g_hash_names[uiMode];
 		TCHAR msgString[MAX_PATH_EX];
-		StringCchPrintf(msgString,MAX_PATH_EX,TEXT("You have to calculate the %s checksums first. Click OK to do that now."),hashName);
+		StringCchPrintf(msgString,MAX_PATH_EX,TEXT("您必须首先计算 %s ，单击 确定 立即执行此操作."),hashName);
 		if( MessageBox(arrHwnd[ID_MAIN_WND],
 			msgString,
-			TEXT("Question"),MB_OKCANCEL | MB_ICONQUESTION | MB_APPLMODAL | MB_SETFOREGROUND) == IDCANCEL)
+			TEXT("问题"),MB_OKCANCEL | MB_ICONQUESTION | MB_APPLMODAL | MB_SETFOREGROUND) == IDCANCEL)
 			return true;
 		doRehash = true;
 	}

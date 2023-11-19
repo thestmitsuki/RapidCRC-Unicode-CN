@@ -722,25 +722,25 @@ VOID SetInfoColumnText(FILEINFO *pFileinfo, lFILEINFO *fileList)
 		if(pFileinfo->dwError == APPL_ERROR_ILLEGAL_CRC)
 			StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("CRC/MD5 Invalid"));
 		else if(pFileinfo->dwError == ERROR_FILE_NOT_FOUND || pFileinfo->dwError == ERROR_PATH_NOT_FOUND)
-			StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("File not found"));
+			StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("未找到文件"));
 		else
-			StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("Error"));
+			StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("错误"));
 	} else {
         switch(pFileinfo->status) {
             case STATUS_OK:
-			    StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("File OK"));
+			    StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("文件正常"));
                 break;
             case STATUS_NOT_OK:
-			    StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("File corrupt"));
+			    StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("文件损坏"));
                 break;
             case STATUS_NO_CRC:
-			    StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("No hash found"));
+			    StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("未找到HASH"));
                 break;
             case STATUS_HASH_FILENAME:
-                StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("Checksum in filename"));
+                StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("文件名 校验"));
                 break;
             case STATUS_HASH_STREAM:
-                StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("Checksum in stream"));
+                StringCchCopy(pFileinfo->szInfo, INFOTEXT_STRING_LENGTH, TEXT("流 校验"));
                 break;
 		}
 	}

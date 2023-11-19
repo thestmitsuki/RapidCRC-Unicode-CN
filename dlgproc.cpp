@@ -883,39 +883,39 @@ INT_PTR CALLBACK DlgProcFileCreation(HWND hDlg, UINT message, WPARAM wParam, LPA
 	case WM_SET_CTRLS_STATE:
         hashExt = g_hash_ext[pfco->uiMode];
 
-		StringCchPrintf(szString, MAX_PATH_EX, TEXT("How to create the .%s file(s)?"), hashExt);
+		StringCchPrintf(szString, MAX_PATH_EX, TEXT("创建 .%s 文件"), hashExt);
 		SetWindowText(hDlg, szString);
 
-		StringCchPrintf(szString, MAX_PATH_EX, TEXT("Please choose how you want to write %s files into the .%s file:"),
-			 pfco->uiNumSelected == 0 ? TEXT("all") : TEXT("the selected"), hashExt);
+		StringCchPrintf(szString, MAX_PATH_EX, TEXT("请选择将 %s 写入 .%s 文件的方式:"),
+			 pfco->uiNumSelected == 0 ? TEXT("全部") : TEXT("被选中的"), hashExt);
 		SetWindowText(GetDlgItem(hDlg, IDC_STATIC_INTRO_TEXT), szString);
 
-		StringCchPrintf(szString, MAX_PATH_EX, TEXT("Create a .%s file for every single file%s"),
-			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (md5sum compatible)") : TEXT("") );
+		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个 .%s 文件创建 %s"),
+			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (MD5SUM兼容)") : TEXT("") );
 		SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_PER_FILE), szString);
 
-		StringCchPrintf(szString, MAX_PATH_EX, TEXT("Create a .%s file for every directory%s"),
-			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (md5sum compatible)") : TEXT("") );
+		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个 .%s 目录创建 %s"),
+			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (MD5SUM兼容)") : TEXT("") );
 		SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_PER_DIR), szString);
 
-		StringCchPrintf(szString, MAX_PATH_EX, TEXT("Create one .%s file for all files%s"),
-			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (potentially not md5sum compatible *)") : TEXT("") );
+		StringCchPrintf(szString, MAX_PATH_EX, TEXT("为单个 .%s 文件创建 %s"),
+			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (可能与 MD5SUM 不兼容 *)") : TEXT("") );
 		SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_FILE), szString);
 
-        StringCchPrintf(szString, MAX_PATH_EX, TEXT("Create one .%s file for all files with automatic name%s"),
+        StringCchPrintf(szString, MAX_PATH_EX, TEXT("为所有文件创建一个以.%s 为扩展名的文件且自动命名%s"),
 			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (*)") : TEXT("") );
         SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_FILE_DIR_NAME), szString);
 
-        StringCchPrintf(szString, MAX_PATH_EX, TEXT("Create one .%s file per job%s"),
-			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (potentially not md5sum compatible *)") : TEXT("") );
+        StringCchPrintf(szString, MAX_PATH_EX, TEXT("为每一个 .%s 任务创建%s"),
+			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (可能与 MD5SUM 不兼容)") : TEXT("") );
 		SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_PER_JOB), szString);
 
-        StringCchPrintf(szString, MAX_PATH_EX, TEXT("Create one .%s file per job with automatic name%s"),
+        StringCchPrintf(szString, MAX_PATH_EX, TEXT("为所有任务创建一个以 .%s 为扩展名的文件且自动命名%s"),
 			hashExt,  pfco->uiMode == MODE_MD5 ? TEXT(" (*)") : TEXT("") );
         SetWindowText(GetDlgItem(hDlg, IDC_RADIO_ONE_PER_JOB_DIR_NAME), szString);
 
 		SetWindowText(GetDlgItem(hDlg, IDC_STATIC_EXPLANATION),
-			pfco->uiMode == MODE_MD5 ? TEXT("* : md5sum compatible .MD5 files cannot hold directory information") : TEXT(""));
+			pfco->uiMode == MODE_MD5 ? TEXT("* : MD5SUM兼容.MD5 文件无法保存目录信息") : TEXT(""));
 
 		switch(pfco->uiCreateFileMode){
 		case CREATE_ONE_PER_FILE:
@@ -947,7 +947,7 @@ INT_PTR CALLBACK DlgProcFileCreation(HWND hDlg, UINT message, WPARAM wParam, LPA
 		{
 		case IDC_RADIO_ONE_PER_FILE:
 			if(HIWORD(wParam) == BN_CLICKED){
-				SetWindowText(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), TEXT("<Created from filename>"));
+				SetWindowText(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), TEXT("<从 文 件 名 创 建>"));
 				EnableWindow(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), FALSE);
 				return TRUE;
 			}
@@ -961,28 +961,28 @@ INT_PTR CALLBACK DlgProcFileCreation(HWND hDlg, UINT message, WPARAM wParam, LPA
 			break;
 		case IDC_RADIO_ONE_FILE:
 			if(HIWORD(wParam) == BN_CLICKED){
-				SetWindowText(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), TEXT("<You are asked in the next step>"));
+				SetWindowText(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), TEXT("<在 下 一 步 中 会 询 问>"));
 				EnableWindow(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), FALSE);
 				return TRUE;
 			}
 			break;
         case IDC_RADIO_ONE_FILE_DIR_NAME:
 			if(HIWORD(wParam) == BN_CLICKED){
-				SetWindowText(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), TEXT("<You are asked in the next step>"));
+				SetWindowText(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), TEXT("<在 下 一 步 中 会 询 问>"));
 				EnableWindow(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), FALSE);
 				return TRUE;
 			}
 			break;
         case IDC_RADIO_ONE_PER_JOB:
 			if(HIWORD(wParam) == BN_CLICKED){
-				SetWindowText(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), TEXT("<You are asked in the next step>"));
+				SetWindowText(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), TEXT("<在 下 一 步 中 会 询 问>"));
 				EnableWindow(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), FALSE);
 				return TRUE;
 			}
 			break;
         case IDC_RADIO_ONE_PER_JOB_DIR_NAME:
 			if(HIWORD(wParam) == BN_CLICKED){
-				SetWindowText(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), TEXT("<You are asked in the next step>"));
+				SetWindowText(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), TEXT("<在 下 一 步 中 会 询 问>"));
 				EnableWindow(GetDlgItem(hDlg, IDC_EDIT_FILENAME_CHECKSUM), FALSE);
 				return TRUE;
 			}

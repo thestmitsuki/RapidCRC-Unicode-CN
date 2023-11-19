@@ -158,12 +158,12 @@ VOID CreateAndInitChildWindows(HWND arrHwnd[ID_NUM_WINDOWS], WNDPROC arrOldWndPr
 
 
 	arrHwnd[ID_MAIN_WND]				= hMainWnd;
-	arrHwnd[ID_GROUP_RESULT]			= CreateWindow(TEXT("BUTTON"), TEXT("Results"), BS_GROUPBOX | WS_VISIBLE | WS_CHILD | WS_CLIPSIBLINGS, 0, 0, 0, 0, hMainWnd, (HMENU)ID_GROUP_RESULT, g_hInstance, NULL);
+	arrHwnd[ID_GROUP_RESULT]			= CreateWindow(TEXT("BUTTON"), TEXT("校验信息"), BS_GROUPBOX | WS_VISIBLE | WS_CHILD | WS_CLIPSIBLINGS, 0, 0, 0, 0, hMainWnd, (HMENU)ID_GROUP_RESULT, g_hInstance, NULL);
     WNDPROC lpfnOldWndProc              = (WNDPROC)SetWindowLongPtr(arrHwnd[ID_GROUP_RESULT],GWLP_WNDPROC,(LONG_PTR)WndProcGroupBox);
     SetWindowLongPtr(arrHwnd[ID_GROUP_RESULT],GWLP_USERDATA,(LONG_PTR)lpfnOldWndProc);
 
 
-	arrHwnd[ID_STATIC_FILENAME]			= CreateWindow(TEXT("STATIC"), TEXT("File:"), SS_LEFTNOWORDWRAP | WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_STATIC_FILENAME, g_hInstance, NULL);
+	arrHwnd[ID_STATIC_FILENAME]			= CreateWindow(TEXT("STATIC"), TEXT("文件:"), SS_LEFTNOWORDWRAP | WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_STATIC_FILENAME, g_hInstance, NULL);
 	arrHwnd[ID_EDIT_FILENAME]			= CreateWindow(TEXT("EDIT"), NULL, ES_AUTOHSCROLL | ES_READONLY | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_EDIT_FILENAME, g_hInstance, NULL);
 	arrHwnd[ID_STATIC_CRC_VALUE]		= CreateWindow(TEXT("STATIC"), TEXT("CRC:"), SS_LEFTNOWORDWRAP | WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_STATIC_CRC_VALUE, g_hInstance, NULL);
 	arrHwnd[ID_EDIT_CRC_VALUE]			= CreateWindow(TEXT("EDIT"), NULL, ES_AUTOHSCROLL | ES_READONLY | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_EDIT_CRC_VALUE, g_hInstance, NULL);
@@ -189,24 +189,24 @@ VOID CreateAndInitChildWindows(HWND arrHwnd[ID_NUM_WINDOWS], WNDPROC arrOldWndPr
 	arrHwnd[ID_EDIT_BLAKE2SP_VALUE]		= CreateWindow(TEXT("EDIT"), NULL, ES_AUTOHSCROLL | ES_READONLY | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_EDIT_BLAKE2SP_VALUE, g_hInstance, NULL);
 	arrHwnd[ID_STATIC_BLAKE3_VALUE]	    = CreateWindow(TEXT("STATIC"), TEXT("BLAKE3:"), SS_LEFTNOWORDWRAP | WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_STATIC_BLAKE3_VALUE, g_hInstance, NULL);
 	arrHwnd[ID_EDIT_BLAKE3_VALUE]		= CreateWindow(TEXT("EDIT"), NULL, ES_AUTOHSCROLL | ES_READONLY | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_EDIT_BLAKE3_VALUE, g_hInstance, NULL);
-	arrHwnd[ID_STATIC_INFO]				= CreateWindow(TEXT("STATIC"), TEXT("Info:"), SS_LEFTNOWORDWRAP | WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_STATIC_INFO, g_hInstance, NULL);
+	arrHwnd[ID_STATIC_INFO]				= CreateWindow(TEXT("STATIC"), TEXT("信息:"), SS_LEFTNOWORDWRAP | WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_STATIC_INFO, g_hInstance, NULL);
 	arrHwnd[ID_EDIT_INFO]				= CreateWindow(TEXT("EDIT"), NULL, ES_AUTOHSCROLL | ES_READONLY | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_EDIT_INFO, g_hInstance, NULL);
-	arrHwnd[ID_BTN_ERROR_DESCR]			= CreateWindow(TEXT("BUTTON"), TEXT("Descr."), BS_PUSHBUTTON | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_ERROR_DESCR, g_hInstance, NULL);
+	arrHwnd[ID_BTN_ERROR_DESCR]			= CreateWindow(TEXT("BUTTON"), TEXT("详情"), BS_PUSHBUTTON | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_ERROR_DESCR, g_hInstance, NULL);
 
-	arrHwnd[ID_STATIC_STATUS]			= CreateWindow(TEXT("STATIC"), TEXT("Status:"), SS_LEFTNOWORDWRAP | WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_STATIC_STATUS, g_hInstance, NULL);
+	arrHwnd[ID_STATIC_STATUS]			= CreateWindow(TEXT("STATIC"), TEXT("状态:"), SS_LEFTNOWORDWRAP | WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_STATIC_STATUS, g_hInstance, NULL);
 	arrHwnd[ID_EDIT_STATUS]				= CreateWindow(TEXT("EDIT"), NULL, ES_AUTOHSCROLL | ES_READONLY | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_EDIT_STATUS, g_hInstance, NULL);
 
-	arrHwnd[ID_BTN_CRC_IN_FILENAME]		= CreateWindow(TEXT("BUTTON"), TEXT("CRC into Filename"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_CRC_IN_FILENAME, g_hInstance, NULL);
-    arrHwnd[ID_STATIC_CREATE]			= CreateWindow(TEXT("STATIC"), TEXT("Create:"), SS_LEFTNOWORDWRAP | WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_STATIC_CREATE, g_hInstance, NULL);
-	arrHwnd[ID_BTN_CRC_IN_SFV]			= CreateWindow(TEXT("BUTTON"), TEXT("SFV file"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_CRC_IN_SFV, g_hInstance, NULL);
+	arrHwnd[ID_BTN_CRC_IN_FILENAME]		= CreateWindow(TEXT("BUTTON"), TEXT("往文件名中写入 CRC "), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_CRC_IN_FILENAME, g_hInstance, NULL);
+    arrHwnd[ID_STATIC_CREATE]			= CreateWindow(TEXT("STATIC"), TEXT("创建:"), SS_LEFTNOWORDWRAP | WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_STATIC_CREATE, g_hInstance, NULL);
+	arrHwnd[ID_BTN_CRC_IN_SFV]			= CreateWindow(TEXT("BUTTON"), TEXT("SFV 文件"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_CRC_IN_SFV, g_hInstance, NULL);
 	SendMessage(arrHwnd[ID_BTN_CRC_IN_SFV],BM_SETIMAGE,IMAGE_ICON,(LPARAM)LoadImage(g_hInstance,MAKEINTRESOURCE(IDI_ICON_HASHFILE),IMAGE_ICON,16,16,LR_DEFAULTCOLOR|LR_SHARED));
-	arrHwnd[ID_BTN_MD5_IN_MD5]			= CreateWindow(TEXT("BUTTON"), TEXT("MD5 file"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_MD5_IN_MD5, g_hInstance, NULL);
+	arrHwnd[ID_BTN_MD5_IN_MD5]			= CreateWindow(TEXT("BUTTON"), TEXT("MD5 文件"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_MD5_IN_MD5, g_hInstance, NULL);
 	SendMessage(arrHwnd[ID_BTN_MD5_IN_MD5],BM_SETIMAGE,IMAGE_ICON,(LPARAM)LoadImage(g_hInstance,MAKEINTRESOURCE(IDI_ICON_HASHFILE),IMAGE_ICON,16,16,LR_DEFAULTCOLOR|LR_SHARED));
 	arrHwnd[ID_BTN_SHA_IN_SHA]		    = CreateWindow(TEXT("BUTTON"), TEXT("SHA"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_SHA_IN_SHA, g_hInstance, NULL);
 	SendMessage(arrHwnd[ID_BTN_SHA_IN_SHA],BM_SETIMAGE,IMAGE_ICON,(LPARAM)LoadImage(g_hInstance,MAKEINTRESOURCE(IDI_ICON_HASHFILE),IMAGE_ICON,16,16,LR_DEFAULTCOLOR|LR_SHARED));
     arrHwnd[ID_BTN_BLAKE_IN_BLAKE]      = CreateWindow(TEXT("BUTTON"), TEXT("Blake"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_BLAKE_IN_BLAKE, g_hInstance, NULL);
 	SendMessage(arrHwnd[ID_BTN_BLAKE_IN_BLAKE],BM_SETIMAGE,IMAGE_ICON,(LPARAM)LoadImage(g_hInstance,MAKEINTRESOURCE(IDI_ICON_HASHFILE),IMAGE_ICON,16,16,LR_DEFAULTCOLOR|LR_SHARED));
-	arrHwnd[ID_BTN_OPTIONS]				= CreateWindow(TEXT("BUTTON"), TEXT("Options"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_OPTIONS, g_hInstance, NULL);
+	arrHwnd[ID_BTN_OPTIONS]				= CreateWindow(TEXT("BUTTON"), TEXT("设置"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_OPTIONS, g_hInstance, NULL);
 
     arrHwnd[ID_BTN_PLAY_PAUSE]			= CreateWindow(TEXT("BUTTON"), TEXT("P"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP| BS_ICON | BS_CENTER, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_PLAY_PAUSE, g_hInstance, NULL);
 	SendMessage(arrHwnd[ID_BTN_PLAY_PAUSE],BM_SETIMAGE,IMAGE_ICON,(LPARAM)LoadImage(g_hInstance,MAKEINTRESOURCE(IDI_ICON_PAUSE),IMAGE_ICON,16,16,LR_DEFAULTCOLOR|LR_SHARED));
@@ -217,13 +217,13 @@ VOID CreateAndInitChildWindows(HWND arrHwnd[ID_NUM_WINDOWS], WNDPROC arrOldWndPr
 
 	arrHwnd[ID_PROGRESS_FILE]			= CreateWindow(PROGRESS_CLASS, NULL, WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_PROGRESS_FILE, g_hInstance, NULL);
 	arrHwnd[ID_PROGRESS_GLOBAL]			= CreateWindow(PROGRESS_CLASS, NULL, WS_VISIBLE | WS_CHILD, 0, 0, 0, 0, hMainWnd, (HMENU)ID_PROGRESS_GLOBAL, g_hInstance, NULL);
-	arrHwnd[ID_BTN_OPENFILES_PAUSE]		= CreateWindow(TEXT("BUTTON"), TEXT("Open Files"), BS_DEFPUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_OPENFILES_PAUSE, g_hInstance, NULL);
+	arrHwnd[ID_BTN_OPENFILES_PAUSE]		= CreateWindow(TEXT("BUTTON"), TEXT("打开文件"), BS_DEFPUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_OPENFILES_PAUSE, g_hInstance, NULL);
 	SendMessage(arrHwnd[ID_BTN_OPENFILES_PAUSE],BM_SETIMAGE,IMAGE_ICON,(LPARAM)LoadImage(g_hInstance,MAKEINTRESOURCE(IDI_ICON_OPEN),IMAGE_ICON,16,16,LR_DEFAULTCOLOR|LR_SHARED));
 
-	arrHwnd[ID_BTN_EXIT]				= CreateWindow(TEXT("BUTTON"), TEXT("Exit"), BS_PUSHBUTTON |WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_EXIT, g_hInstance, NULL);
+	arrHwnd[ID_BTN_EXIT]				= CreateWindow(TEXT("BUTTON"), TEXT("退出"), BS_PUSHBUTTON |WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_EXIT, g_hInstance, NULL);
 	arrHwnd[ID_LISTVIEW]				= CreateWindowEx(WS_EX_CLIENTEDGE, WC_LISTVIEW, NULL, LVS_REPORT | LVS_SHOWSELALWAYS | WS_VISIBLE | WS_CHILD | WS_VSCROLL | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_LISTVIEW, g_hInstance, NULL);
 
-	arrHwnd[ID_BTN_CRC_IN_STREAM]		= CreateWindow(TEXT("BUTTON"), TEXT("CRC into NTFS Stream"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_CRC_IN_STREAM, g_hInstance, NULL);
+	arrHwnd[ID_BTN_CRC_IN_STREAM]		= CreateWindow(TEXT("BUTTON"), TEXT("往 NTFS 流写入 CRC"), BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD | WS_TABSTOP, 0, 0, 0, 0, hMainWnd, (HMENU)ID_BTN_CRC_IN_STREAM, g_hInstance, NULL);
 
 	// select everywhere the font that is usually used today in all applications
 	for(i=0; i < ID_NUM_WINDOWS; i++)
@@ -251,9 +251,9 @@ VOID CreateAndInitChildWindows(HWND arrHwnd[ID_NUM_WINDOWS], WNDPROC arrOldWndPr
 	InitListView(arrHwnd[ID_LISTVIEW], *plAveCharWidth);
 
 	// fill combobox with priority strings
-	SendMessage(arrHwnd[ID_COMBO_PRIORITY], CB_ADDSTRING, 0, (LPARAM) (LPCTSTR) TEXT("Low Priority"));
-	SendMessage(arrHwnd[ID_COMBO_PRIORITY], CB_ADDSTRING, 0, (LPARAM) (LPCTSTR) TEXT("Normal Priority"));
-	SendMessage(arrHwnd[ID_COMBO_PRIORITY], CB_ADDSTRING, 0, (LPARAM) (LPCTSTR) TEXT("High Priority"));
+	SendMessage(arrHwnd[ID_COMBO_PRIORITY], CB_ADDSTRING, 0, (LPARAM) (LPCTSTR) TEXT("低优先级"));
+	SendMessage(arrHwnd[ID_COMBO_PRIORITY], CB_ADDSTRING, 0, (LPARAM) (LPCTSTR) TEXT("正常"));
+	SendMessage(arrHwnd[ID_COMBO_PRIORITY], CB_ADDSTRING, 0, (LPARAM) (LPCTSTR) TEXT("高优先级"));
 	SendMessage(arrHwnd[ID_COMBO_PRIORITY], CB_SETCURSEL, g_program_options.uiPriority, 0);
 
 	return;
@@ -269,7 +269,7 @@ void CreateHashFilenameButtonPopupMenu(HMENU *menu) {
 
     for(int i = 0; i < HASH_TYPE_SHA3_224; i++) {
         if(i==2) continue;
-        StringCchPrintf(menuText,100,TEXT("Put %s into Filename"),g_hash_names[i]);
+        StringCchPrintf(menuText,100,TEXT("往文件名中写入 %s"),g_hash_names[i]);
         InsertMenu(*menu,i, MF_BYPOSITION | MF_STRING, IDM_CRC_FILENAME + i,menuText);
     }
 }
@@ -284,7 +284,7 @@ void CreateHashStreamButtonPopupMenu(HMENU *menu) {
 
 	for (int i = 0; i < NUM_HASH_TYPES; i++) {
 		if (i == 2) continue;
-		StringCchPrintf(menuText, 100, TEXT("Put %s into Stream"), g_hash_names[i]);
+		StringCchPrintf(menuText, 100, TEXT("往流中写入 %s "), g_hash_names[i]);
 		InsertMenu(*menu, i, MF_BYPOSITION | MF_STRING, IDM_CRC_STREAM + i, menuText);
 	}
 }
@@ -332,13 +332,13 @@ void CreateListViewPopupMenu(HMENU *menu)
 void CreateListViewPopupMenu(HMENU *menu) {
 	*menu = CreatePopupMenu();
 
-	AppendMenu(*menu, MF_STRING, IDM_SELECT_ALL, TEXT("Select All"));
-	AppendMenu(*menu, MF_STRING, IDM_SELECT_NONE, TEXT("Select None"));
+	AppendMenu(*menu, MF_STRING, IDM_SELECT_ALL, TEXT("全选"));
+	AppendMenu(*menu, MF_STRING, IDM_SELECT_NONE, TEXT("取消选择"));
 	AppendMenu(*menu, MF_SEPARATOR, NULL, NULL);
-	AppendMenu(*menu, MF_STRING, IDM_REMOVE_ITEMS, TEXT("Remove Selected Items"));
-	AppendMenu(*menu, MF_STRING, IDM_CLEAR_LIST, TEXT("Clear List"));
+	AppendMenu(*menu, MF_STRING, IDM_REMOVE_ITEMS, TEXT("删除所选项目"));
+	AppendMenu(*menu, MF_STRING, IDM_CLEAR_LIST, TEXT("清除列表"));
 	AppendMenu(*menu, MF_SEPARATOR, NULL, NULL);
-	AppendMenu(*menu, MF_STRING, IDM_HIDE_VERIFIED, TEXT("Hide Verified Items"));
+	AppendMenu(*menu, MF_STRING, IDM_HIDE_VERIFIED, TEXT("隐藏已验证的项目"));
 	AppendMenu(*menu, MF_SEPARATOR, NULL, NULL);
 
 	// calculate submenu
@@ -348,7 +348,7 @@ void CreateListViewPopupMenu(HMENU *menu) {
 	mii.cbSize = sizeof(mii);
 	mii.wID = IDM_SUBMENU_CALC;
 	mii.hSubMenu = hCalcSubMenu;
-	mii.dwTypeData = TEXT("Calculate");
+	mii.dwTypeData = TEXT("算法");
 	InsertMenuItem(*menu, -1, TRUE, &mii);
 
 	for (int i = 0; i < NUM_HASH_TYPES; i++) {
@@ -361,7 +361,7 @@ void CreateListViewPopupMenu(HMENU *menu) {
 	mii.cbSize = sizeof(mii);
 	mii.wID = IDM_SUBMENU_CALC;
 	mii.hSubMenu = hClipSubMenu;
-	mii.dwTypeData = TEXT("Copy to Clipboard");
+	mii.dwTypeData = TEXT("复制到剪贴板");
 	InsertMenuItem(*menu, -1, TRUE, &mii);
 
     for(int i=0;i<NUM_HASH_TYPES;i++) {
@@ -724,7 +724,7 @@ BOOL InitListView(CONST HWND hWndListView, CONST LONG lACW)
 	lvcolumn.mask = LVCF_FMT | LVCF_WIDTH | LVCF_TEXT | LVCF_SUBITEM;
 	lvcolumn.fmt = LVCFMT_LEFT;
 	lvcolumn.cx = 0;
-	lvcolumn.pszText = TEXT("File");
+	lvcolumn.pszText = TEXT("文件");
 	lvcolumn.iSubItem = 0;
 	if(ListView_InsertColumn(hWndListView, 0, & lvcolumn) == -1)
 		return FALSE;
@@ -810,7 +810,7 @@ BOOL InsertGroupIntoListView(CONST HWND hListView, lFILEINFO *fileList)
 	lvGroup.cbSize = sizeof(LVGROUP);
 	lvGroup.iGroupId=fileList->iGroupId;
     RegularFromLongFilename(szFilenameTemp, fileList->g_szBasePath);
-	StringCchPrintf(szGroupHeader, MAX_PATH_EX + 6, TEXT("Job %02d - %s"), fileList->iGroupId, szFilenameTemp );
+	StringCchPrintf(szGroupHeader, MAX_PATH_EX + 6, TEXT("任务 %02d - %s"), fileList->iGroupId, szFilenameTemp );
 	lvGroup.pszHeader=(LPWSTR)szGroupHeader;//fileList->g_szBasePath;
 	if(ListView_InsertGroup(hListView,-1,&lvGroup)==-1)
 		return FALSE;
@@ -950,7 +950,7 @@ BOOL SetSubItemColumns(CONST HWND hWndListView)
 	lvcolumn.mask = LVCF_FMT | LVCF_WIDTH | LVCF_TEXT | LVCF_SUBITEM;
 	lvcolumn.fmt = LVCFMT_LEFT;
 	lvcolumn.cx = 0;
-	lvcolumn.pszText = TEXT("Info");
+	lvcolumn.pszText = TEXT("信息");
 	lvcolumn.iSubItem = iCurrentSubItem;
 
 	if( ListView_InsertColumn(hWndListView, lvcolumn.iSubItem, & lvcolumn) == -1)
@@ -1014,11 +1014,11 @@ BOOL ShowResult(CONST HWND arrHwnd[ID_NUM_WINDOWS], FILEINFO * pFileinfo, SHOWRE
                 SetWindowText(arrHwnd[ID_EDIT_CRC_VALUE + i], TEXT(""));
             }
 			if(pFileinfo->dwError == APPL_ERROR_ILLEGAL_CRC)
-				StringCchPrintf(szTemp1, MAX_RESULT_LINE, TEXT("The found checksum for this file was not valid"), pFileinfo->dwError);
+				StringCchPrintf(szTemp1, MAX_RESULT_LINE, TEXT("此文件校验无效"), pFileinfo->dwError);
             else if(pFileinfo->dwError == ERROR_FILE_NOT_FOUND || pFileinfo->dwError == ERROR_PATH_NOT_FOUND)
-				StringCchPrintf(szTemp1, MAX_RESULT_LINE, TEXT("The file could not be found"), pFileinfo->dwError);
+				StringCchPrintf(szTemp1, MAX_RESULT_LINE, TEXT("找不到文件"), pFileinfo->dwError);
 			else
-				StringCchPrintf(szTemp1, MAX_RESULT_LINE, TEXT("Error %d occured with this file"), pFileinfo->dwError);
+				StringCchPrintf(szTemp1, MAX_RESULT_LINE, TEXT("遇到错误 %d "), pFileinfo->dwError);
 			SetWindowText(arrHwnd[ID_EDIT_INFO], szTemp1);
 
 			if(pFileinfo->dwError & APPL_ERROR)
@@ -1036,14 +1036,14 @@ BOOL ShowResult(CONST HWND arrHwnd[ID_NUM_WINDOWS], FILEINFO * pFileinfo, SHOWRE
 					if (pshowresult_params->bHashIsWrong[i])
 					{
 						CString szFound = HashBytesToString((BYTE*)&pFileinfo->hashInfo[i].f, i);
-						s.AppendFormat(TEXT(" => %s found in "), szFound);
+						s.AppendFormat(TEXT(" => 在 %s 发现"), szFound);
 						if (pFileinfo->hashInfo[i].dwFound == HASH_FOUND_FILE)
 						{
-							s.Append(TEXT("file"));
+							s.Append(TEXT("文件"));
 						}
 						else
 						{
-							s.Append(TEXT("filename/stream"));
+							s.Append(TEXT("文件名/流"));
 						}
 					}
 			    }
@@ -1051,11 +1051,11 @@ BOOL ShowResult(CONST HWND arrHwnd[ID_NUM_WINDOWS], FILEINFO * pFileinfo, SHOWRE
 				{
 					if (pFileinfo->hashInfo[i].dwFound == HASH_FOUND_FILENAME)
 					{
-						s = TEXT("HASH found in filename");
+						s = TEXT("在文件名中发现 HASH");
 					}
 					else
 					{
-						s = TEXT("HASH found in stream");
+						s = TEXT("在流中发现 HASH");
 					}
 				}
 			    SetWindowText(arrHwnd[ID_EDIT_CRC_VALUE + i], s);
@@ -1079,13 +1079,13 @@ BOOL ShowResult(CONST HWND arrHwnd[ID_NUM_WINDOWS], FILEINFO * pFileinfo, SHOWRE
 				StringCchCopy(szFormatString, MAX_RESULT_LINE, TEXT("%.1f"));
 
 			if(pFileinfo->fSeconds > 0.0){
-				StringCchCat(szFormatString, MAX_RESULT_LINE, TEXT(" %s read in %.2f sec => %.2f MB/s"));
+				StringCchCat(szFormatString, MAX_RESULT_LINE, TEXT("%s 读取耗时 %.2f 秒 => %.2f MB/s"));
 				StringCchPrintf(szTemp1, MAX_RESULT_LINE, szFormatString, 
 				fSize, szTemp2, pFileinfo->fSeconds,
 				( ((float)pFileinfo->qwFilesize) / (pFileinfo->fSeconds * 1024 * 1024)) );
 			}
 			else{
-				StringCchCat(szFormatString, MAX_RESULT_LINE, TEXT(" %s read in %.2f sec => 0 MB/s"));
+				StringCchCat(szFormatString, MAX_RESULT_LINE, TEXT("%s 读取耗时 %.2f 秒 => 0 MB/s"));
 				StringCchPrintf(szTemp1, MAX_RESULT_LINE, szFormatString,
 				fSize, szTemp2, pFileinfo->fSeconds );
 			}
@@ -1116,26 +1116,26 @@ VOID DisplayStatusOverview(CONST HWND hEditStatus)
 	size_t stLength;
 
 	StringCchCopy(szLine, MAX_LINE_LENGTH, TEXT(""));
-    StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %u/%u done,"), SyncQueue.dwCountDone, SyncQueue.dwCountTotal);
+    StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %u/%u 完成,"), SyncQueue.dwCountDone, SyncQueue.dwCountTotal);
 	StringCchCat(szLine, MAX_LINE_LENGTH, szLineTmp);
 	if(SyncQueue.dwCountOK > 0){
-        StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux file OK,"), SyncQueue.dwCountOK);
+        StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux 文件正常,"), SyncQueue.dwCountOK);
 		StringCchCat(szLine, MAX_LINE_LENGTH, szLineTmp);
 	}
 	if(SyncQueue.dwCountNotOK > 0){
-		StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux file corrupt,"), SyncQueue.dwCountNotOK);
+		StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux 文件损坏,"), SyncQueue.dwCountNotOK);
 		StringCchCat(szLine, MAX_LINE_LENGTH, szLineTmp);
 	}
 	if(SyncQueue.dwCountNoCrcFound > 0){
-		StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux no hash found,"), SyncQueue.dwCountNoCrcFound);
+		StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux 未找到哈希值,"), SyncQueue.dwCountNoCrcFound);
 		StringCchCat(szLine, MAX_LINE_LENGTH, szLineTmp);
 	}
 	if(SyncQueue.dwCountNotFound > 0){
-		StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux not found,"), SyncQueue.dwCountNotFound);
+		StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux 未找到,"), SyncQueue.dwCountNotFound);
 		StringCchCat(szLine, MAX_LINE_LENGTH, szLineTmp);
 	}
 	if(SyncQueue.dwCountErrors > 0){
-		StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux with errors,"), SyncQueue.dwCountErrors);
+		StringCchPrintf(szLineTmp, MAX_LINE_LENGTH, TEXT(" %ux 错误,"), SyncQueue.dwCountErrors);
 		StringCchCat(szLine, MAX_LINE_LENGTH, szLineTmp);
 	}
 
@@ -1181,9 +1181,9 @@ DWORD ShowErrorMsg ( CONST HWND hWndMain, CONST DWORD dwError )
 	}
 
 	// display the message in a message box
-	StringCchCopy(szMessage, 500, TEXT("Windows gave the following description of the error:\r\n\r\n"));
+	StringCchCopy(szMessage, 500, TEXT("Windows给出了以下错误描述:\r\n\r\n"));
 	StringCchCat(szMessage, 500, (TCHAR *) lpMsgBuf);
-	MessageBox( hWndMain, szMessage, TEXT("Error Message"), MB_ICONEXCLAMATION | MB_OK );
+	MessageBox( hWndMain, szMessage, TEXT("错误信息"), MB_ICONEXCLAMATION | MB_OK );
 
 	// release the buffer FormatMessage allocated
 	LocalFree( lpMsgBuf );
@@ -1334,7 +1334,7 @@ VOID SetMainWindowTitle(CONST HWND hWnd, int seconds, double bytes_per_second)
     if(seconds) {
         StringCchCat(szTitleBuf, MAX_LINE_LENGTH, TEXT(" - "));
         FormatRemaingTime(szTitleBuf, seconds, MAX_LINE_LENGTH);
-        StringCchCat(szTitleBuf, MAX_LINE_LENGTH, TEXT(" remaining"));
+        StringCchCat(szTitleBuf, MAX_LINE_LENGTH, TEXT(" 剩余 "));
         size_t len;
         StringCchLength(szTitleBuf, MAX_LINE_LENGTH, &len);
         StringCchPrintf(szTitleBuf + len, MAX_LINE_LENGTH, TEXT(" (%.2f MB/s)"), (bytes_per_second / 1024 / 1024));
